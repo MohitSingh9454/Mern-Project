@@ -4,13 +4,14 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'master', url: 'https://github.com/MohitSingh9454/Mern-Project.git'
+                // Ensure the correct branch is referenced here
+                git branch: 'main', url: 'https://github.com/MohitSingh9454/Mern-Project.git'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t mern_project_image .'
+                bat 'docker build -t final_devops_project_image .'
             }
         }
 
